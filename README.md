@@ -1,5 +1,4 @@
-# Coursera_ML
-Machine Learning Course by Andrew Ng
+Machine Learning by Andrew Ng on Coursera
 
 If you come across my github and saw this. Thank you very much for visiting!
 

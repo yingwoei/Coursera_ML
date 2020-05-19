@@ -30,7 +30,7 @@ mu = mean(X);
 sigma = std(X);
 mu_matrix = ones(m,1) .* mu;
 sigma_matrix = ones(m,1) .*sigma;
-compute_X_normalized = (X - mu_matrix) ./sigma_matrix;
+X_norm = (X - mu_matrix) ./sigma_matrix;
 
 
 

@@ -218,3 +218,26 @@ end
 
 fprintf('Program paused. Press enter to continue.\n');
 pause;
+
+%% =========== Part 9: Test Error (Optional) =============
+theta = trainLinearReg(X_poly, y, 3) % find theta with the ideal lambda
+error_test = linearRegCostFunction(X_poly_test, ytest, theta, 0) 
+%Compute error using cv set
+
+%% =========== Part 10: Plot learning curves with randomly selected examples (Optional) =============
+
+% Plot training data and fit
+lambda = 0.01;
+
+figure(1);
+[error_train, error_val] = ...
+    learningCurveRandom(X_poly, y, X_poly_val, yval, lambda);
+plot(1:m, error_train, 1:m, error_val);
+
+title(sprintf('Polynomial Regression Learning Curve (lambda = %f)', lambda));
+xlabel('Number of training examples')
+ylabel('Error')
+axis([0 13 0 100])
+legend('Train', 'Cross Validation')
+
+fprintf('Polynomial Regression (lambda = %f)\n\n', lambda);

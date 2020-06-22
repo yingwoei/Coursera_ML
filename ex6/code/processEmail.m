@@ -100,9 +100,10 @@ while ~isempty(email_contents)
     % strcmp returns a logical vector.
     % find() function returns a list of the non-zero elements in "match"
     idx = find(match); % Retrieve index of the match
-    word_indices = [word_indices idx];
-    % word_indices(end + 1) = find(match);
-    % word_indices(end + 1) = idx % append to the word_indices
+    word_indices = [word_indices idx];     % append to the word_indices
+    % word_indices = [word_indices find(match)]; %alternative
+    % word_indices(end + 1) = find(match); % won't work if fin(match) returns a null vector.
+
     % =============================================================
 
 
